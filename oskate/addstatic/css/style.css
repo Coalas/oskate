@@ -237,7 +237,10 @@ ul#menu li a:hover
     width: 303px;
     float: left;
 }
-
+#right_long.content {
+    width: 503px;
+    float: left;
+}
 #footer
 { clear: both;
   width: 100%;
@@ -348,7 +351,7 @@ table tr td
 table.price { 
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
-  width: 640px;
+  width: 800px;
   /* Table reset stuff */
   border-collapse: collapse; border-spacing: 0; 
 }
@@ -359,7 +362,7 @@ table.price th {
   /* Gradient Background */
 	background: linear-gradient(#333 0%,#444 100%);
 	color: #FFF; font-weight: bold;
-	height: 40px;
+	height: 30px;
 	text-align: center;font-size:16px;
 	text-shadow:1px 1px 1px #444;
 }

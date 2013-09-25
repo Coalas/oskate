@@ -1,12 +1,59 @@
-{% load cms_tags sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags %}
+<!DOCTYPE HTML>
 <html>
-  <head>
-      {% render_block "css" %}
-  </head>
-  <body>
-      {% cms_toolbar %}
-      {% placeholder base_content %}
-      {% block base_content %}{% endblock %}
-      {% render_block "js" %}
-  </body>
+
+<head>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+  <title>{{ request.current_page.get_title }}</title>
+  {% render_block "css" %}
+</head>
+
+<body>
+{% cms_toolbar %}
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+          {% placeholder "header" or %}
+          {% show_placeholder "header" request.current_page.get_home_pk_cache %}
+            <!--h1>simplestyle<a href="#">_7</a></h1>
+            <div class="slogan">Cool slogan goes here!</div-->
+          {% endplaceholder %}
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          {% show_menu 0 0 0 0 %}
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      
+      <div class="content" id="top">
+        {% placeholder "content-top" or %}
+        {% endplaceholder %}
+      </div>
+      <div class="content" id="left">
+        {% placeholder "content-left" or %}
+        {% endplaceholder %}
+      </div>
+      <div class="content" id="right_long">
+        {% placeholder "content-right" or %}
+        {% endplaceholder %}
+      </div>
+      <div style="clear: left;"></div>
+      <div class="content" id="bottom">
+        {% placeholder "content-bottom" or %}        
+        {% endplaceholder %}
+      </div>
+    </div>
+    <div id="footer">
+      <p>Copyright &copy; {{ request.get_host }} | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | </p>
+    </div>
+  </div>
+{% render_block "js" %}
+</body>
 </html>
