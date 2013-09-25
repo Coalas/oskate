@@ -229,6 +229,10 @@ ul#menu li a:hover
 }
 #bottom.content {
 }
+#bottom_long.content {
+ width: 860px;
+}
+
 #left.content {
     width: 302px;
     float: left;
@@ -238,7 +242,7 @@ ul#menu li a:hover
     float: left;
 }
 #right_long.content {
-    width: 503px;
+    width: 533px;
     float: left;
 }
 #footer
